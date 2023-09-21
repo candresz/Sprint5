@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <title>Stats</title>
+  </head>
+  <body>
+    <div id="app">
+      <header
+        class="d-flex justify-content-between align-items-center p-3 header"
+      >
+        <a href="../index.html">
+          <img id="logo" src="../img/amazing_brand.png" alt="Logo Picture" />
+        </a>
+        <nav class="d-flex gap-4">
+          <a href="../index.html">Home</a>
+          <a href="./upcoming.html">Upcoming Events</a>
+          <a href="./pastevents.html">Past Events</a>
+          <a href="./contactus.html">Contact</a>
+          <a href="#">Stats</a>
+        </nav>
+      </header>
+
+      <main class="d-flex flex-column min-vh-100">
+        <div
+          id="carouselExampleFade"
+          class="carousel slide carousel-fade carouselcontainer"
+        >
+          <div class="carousel-inner carouselcontainer">
+            <div class="carousel-item active">
+              <img
+                src="../img/optional_banner_1.jpg"
+                class="d-block w-100 maxhg"
+                alt="Marathon picture"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../img/optional_banner_3.jpg"
+                class="d-block w-100 maxhg"
+                alt="Food Fair Picture"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../img/optional_banner_5.jpg"
+                class="d-block w-100 maxhg"
+                alt="Party Picture"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div id="contenedorTables">
+          <table id="firstTable">
+            <tr>
+              <th colspan="3">Event Statistics</th>
+            </tr>
+            <tr>
+              <td>Events with highest % of attendance</td>
+              <td>Events with lowest % of attendance</td>
+              <td>Events with larger capacity</td>
+            </tr>
+            <tr id="trEvents">
+              <td class="cell">
+                Event: {{highestAttendanceEvent}}
+                <p>Percentage: {{highestAttendance}}%</p>
+              </td>
+              <td class="cell">
+                Event: {{lowestAttendanceEvent}}
+                <p>Percentage: {{lowestAttendance}}%</p>
+              </td>
+              <td class="cell">
+                Event: {{ highestCapacityEvent }}
+                <p>Capacity: {{ highestCapacity }}</p>
+              </td>
+            </tr>
+          </table>
+          <table id="secondTable">
+            <tbody id="trSecondTable">
+              <tr>
+                <th colspan="3">Upcoming Events Statistics by Category</th>
+              </tr>
+              <tr>
+                <td>Category</td>
+                <td>Revenues</td>
+                <td>% of attendance</td>
+              </tr>
+              <tr
+                v-for="categoryData in upComing2Table"
+                :key="categoryData.category"
+              >
+                <td>{{categoryData.category}}</td>
+                <td>{{ calculateCategoryRevenue(categoryData.events) }}</td>
+                <td>
+                  {{ calculateAttendancePercentage(categoryData.events) }}%
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <tbody id="trThirdTable">
+              <tr>
+                <th colspan="3">Past Events Statistics by Category</th>
+              </tr>
+              <tr
+                v-for="categoryPastData in past3Table"
+                :key="categoryPastData.category"
+              >
+                <td>{{categoryPastData.category}}</td>
+                <td>{{ calculateCategoryRevenue(categoryPastData.events) }}</td>
+                <td>
+                  {{ calculateAttendancePercentage(categoryPastData.events) }}%
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+      <footer class="d-flex justify-content-between align-items-center p-3">
+        <div class="d-flex gap-3">
+          <img
+            class="footerpics"
+            src="../img/facebook.png"
+            alt="Facebook picture"
+          />
+          <img
+            class="footerpics"
+            src="../img/instagram.png"
+            alt="Instagram picture"
+          />
+          <img
+            class="footerpics"
+            src="../img/whatsapp.png"
+            alt="Whatsapp picture"
+          />
+        </div>
+        <p>Java Cohort 51</p>
+      </footer>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="../JS/stats.js"></script>
+  </body>
+</html>

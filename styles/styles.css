@@ -1,0 +1,252 @@
+:root {
+  --header: #1d0259;
+  --nav: #05c7f2;
+  --hover: #d90460;
+  --section: #1d0259;
+}
+#logo {
+  max-width: 10rem;
+  max-height: 11rem;
+}
+
+header {
+  background-color: var(--header);
+  min-height: 7rem;
+}
+
+nav > a {
+  text-decoration: none;
+  color: var(--nav);
+}
+nav a:hover {
+  color: var(--hover);
+}
+
+main {
+  background-color: var(--header);
+}
+
+.maxhg {
+  max-height: 20rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.divcontainer {
+  color: white;
+}
+.cardshg {
+  min-height: 12rem;
+  max-height: 12rem;
+}
+
+.footerpics {
+  max-width: 3rem;
+}
+.texthg {
+  max-height: 10rem;
+}
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+}
+footer {
+  background-color: #2f0094;
+  color: white;
+}
+
+.details {
+  background-color: white;
+}
+.formcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 7rem 3rem;
+  color: white;
+}
+.formborder {
+  border: solid 2px white;
+}
+.bm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.containerdetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  max-height: 40rem;
+  max-width: 55rem;
+  gap: 2rem;
+  padding: 2rem;
+}
+.picturedetails1 {
+  object-fit: cover;
+  max-width: 30rem;
+  min-height: 35rem;
+  max-height: 35rem;
+}
+.txt404 {
+  color: white;
+}
+.secName > h2 {
+  color: #ffffff;
+  background-color: var(--section);
+  padding: 16px 24px;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 3px solid var(--header);
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.secName > h2:hover {
+  background-color: var(--hover);
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.secName > h2 {
+  animation: fadeIn 0.5s ease; /* Aplicamos la animación de entrada */
+}
+.border1 {
+  border: solid 3px black;
+}
+.containerinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 30rem;
+  min-height: 35rem;
+  max-height: 35rem;
+  padding: 1rem;
+}
+.maindetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-collapse: collapse;
+  color: white;
+  margin: 3rem 3rem;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid white;
+}
+
+tr > th {
+  background-color: #9b72f2;
+  font-weight: bold;
+  border: 1px solid #ffffff;
+  color: var(--header);
+}
+
+tr > td {
+  background-color: #0c1440;
+  border: 1px solid #ffffff;
+  min-height: 5rem;
+  max-height: 5rem;
+}
+td.cell {
+  border: 1px solid #ffffff;
+  padding: 1rem;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .mainDetails {
+    margin: 1rem;
+  }
+  .header,
+  nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .cont1section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .containerdetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    min-height: 55rem;
+    max-height: 55rem;
+    max-width: 30rem;
+    gap: 2rem;
+  }
+  .picturedetails1 {
+    object-fit: cover;
+    min-width: 15rem;
+    max-width: 15rem;
+    min-height: 15rem;
+    max-height: 15rem;
+  }
+  .containerinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  table {
+    margin: 1rem 3rem;
+  }
+  .divcontainer {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    table {
+      margin: 3rem 3rem;
+    }
+  }
+}

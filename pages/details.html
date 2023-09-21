@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <title>Details</title>
+  </head>
+  <body>
+    <div id="app">
+      <header
+        class="d-flex justify-content-between align-items-center p-3 header"
+      >
+        <a href="../index.html">
+          <img id="logo" src="../img/amazing_brand.png" alt="Logo Picture" />
+        </a>
+        <nav class="d-flex gap-4">
+          <a href="../index.html">Home</a>
+          <a href="./upcoming.html">Upcoming Events</a>
+          <a href="./pastevents.html">Past Events</a>
+          <a href="./contactus.html">Contact</a>
+          <a href="./stats.html">Stats</a>
+        </nav>
+      </header>
+
+      <main class="d-flex flex-column min-vh-100 mainDetails">
+        <div
+          id="details"
+          class="details d-lg-flex justify-content-lg-center align-items-lg-center d-md-flex justify-content-md-center align-items-md-center min-vh-100 p-md-3"
+        >
+          <div class="border1">
+            <img
+              class="picturedetails1"
+              :src="eventDetails.image"
+              :alt="eventDetails.name"
+            />
+          </div>
+          <div class="containerinfo border1">
+            <h3>{{ eventDetails.name }}</h3>
+            <p>{{ eventDetails.description }}</p>
+            <p>Date: {{ eventDetails.date }}</p>
+            <p>Category: {{ eventDetails.category }}</p>
+            <p>Place: {{ eventDetails.place }}</p>
+            <p>Capacity: {{ eventDetails.capacity }}</p>
+            <p v-if="eventDetails.assistance">
+              Assistance: {{ eventDetails.assistance }}
+            </p>
+            <p v-if="eventDetails.estimate">
+              Estimate: {{ eventDetails.estimate }}
+            </p>
+            <p>Price: ${{ eventDetails.price }}</p>
+          </div>
+        </div>
+      </main>
+      <footer class="d-flex justify-content-between align-items-center p-3">
+        <div class="d-flex gap-3">
+          <img
+            class="footerpics"
+            src="../img/facebook.png"
+            alt="Facebook picture"
+          />
+          <img
+            class="footerpics"
+            src="../img/instagram.png"
+            alt="Instagram picture"
+          />
+          <img
+            class="footerpics"
+            src="../img/whatsapp.png"
+            alt="Whatsapp picture"
+          />
+        </div>
+        <p>Java Cohort 51</p>
+      </footer>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../JS/details.js"></script>
+  </body>
+</html>
